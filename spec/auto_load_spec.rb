@@ -22,5 +22,11 @@ describe SalesTax do
     require 'sales_tax/auto_load'
 
     expect(SalesTax::Data).not_to be_empty
+
+    row = SalesTax::Data.find_by_zip_code '12345'
+
+    expect(row).not_to be_nil
+    expect(row.region_code).to eq 'ABCD'
+    expect(row.combined_rate).to eq 0.03
   end
 end

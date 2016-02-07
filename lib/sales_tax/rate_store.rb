@@ -13,15 +13,15 @@ module SalesTax
       @data.empty?
     end
 
-    FIELDS_MAP = {
-      'TaxRegionName' => :region_name,
-      'TaxRegionCode' => :region_code,
-      'CombinedRate'  => :combined_rate,
-      'StateRate'     => :state_rate,
-      'CountyRate'    => :county_rate,
-      'CityRate'      => :city_rate,
-      'SpecialRate'   => :special_rate,
-    }
+    FIELDS_MAP = [
+      ['TaxRegionName' , :to_s],
+      ['TaxRegionCode' , :to_s],
+      ['CombinedRate'  , :to_f],
+      ['StateRate'     , :to_f],
+      ['CountyRate'    , :to_f],
+      ['CityRate'      , :to_f],
+      ['SpecialRate'   , :to_f],
+    ]
 
     def load_csv_file(path)
       CSV.foreach(path, headers: :first_row) do |row|
