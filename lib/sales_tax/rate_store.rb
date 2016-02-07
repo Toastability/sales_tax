@@ -13,6 +13,10 @@ module SalesTax
       @data.empty?
     end
 
+    def find_by_zip_code(zip_code)
+      @data[zip_code.to_s]
+    end
+
     FIELDS_MAP = [
       ['TaxRegionName' , :to_s],
       ['TaxRegionCode' , :to_s],
@@ -26,13 +30,12 @@ module SalesTax
     def load_csv_file(path)
       CSV.foreach(path, headers: :first_row) do |row|
         zip_code = row['ZipCode']
-        fields   = {}
 
-        FIELDS_MAP.each do |(row_key, fields_key)|
-          fields[fields_key] = row[row_key]
+        fields = FIELDS_MAP.map do |(row_key, transform)|
+          row[row_key].send transform
         end
 
-        @data[zip_code] = Rate.new fields
+        @data[zip_code] = Rate.new *fields
       end
     end
   end
