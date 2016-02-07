@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Dirk Gadsden']
   s.email       = ['dirk@esherido.com']
-  s.homepage    = ''
-  s.summary     = ''
+  s.homepage    = 'https://github.com/dirk/sales_tax'
+  s.summary     = 'Look up sales tax rates by zip code.'
   s.description = s.summary
-  s.license     = ''
+  s.license     = 'MIT'
 
   s.files         = `git ls-files`.split "\n"
   s.test_files    = `git ls-files -- {test}/*`.split "\n"
