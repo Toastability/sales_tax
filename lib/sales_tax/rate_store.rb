@@ -17,25 +17,32 @@ module SalesTax
       @data[zip_code.to_s]
     end
 
-    FIELDS_MAP = [
-      ['TaxRegionName' , :to_s],
-      ['TaxRegionCode' , :to_s],
-      ['CombinedRate'  , :to_f],
-      ['StateRate'     , :to_f],
-      ['CountyRate'    , :to_f],
-      ['CityRate'      , :to_f],
-      ['SpecialRate'   , :to_f],
-    ]
-
     def load_csv_file(path)
-      CSV.foreach(path, headers: :first_row) do |row|
-        zip_code = row['ZipCode']
+      rows = CSV.parse(File.read(path)).to_a
+      rows.shift # Shift the header row off the front
 
-        fields = FIELDS_MAP.map do |(row_key, transform)|
-          row[row_key].send transform
-        end
+      # 0 = State
+      # 1 = ZipCode
+      # 2 = TaxRegionName
+      # 3 = TaxRegionCode
+      # 4 = CombinedRate
+      # 5 = StateRate
+      # 6 = CountyRate
+      # 7 = CityRate
+      # 8 = SpecialRate
 
-        @data[zip_code] = Rate.new *fields
+      rows.to_a.each do |row|
+        zip_code = row[1]
+
+        @data[zip_code] = Rate.new(
+          row[2],
+          row[3],
+          row[4].to_f,
+          row[5].to_f,
+          row[6].to_f,
+          row[7].to_f,
+          row[8].to_f,
+        )
       end
     end
   end

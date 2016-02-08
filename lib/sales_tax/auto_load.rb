@@ -13,4 +13,12 @@ module SalesTax
   end
 end
 
+# Uncomment for profiling:
+# require 'ruby-prof'
+# RubyProf.start
+
 SalesTax.auto_load
+
+# result = RubyProf.stop
+# printer = RubyProf::FlatPrinter.new(result)
+# printer.print(STDOUT)

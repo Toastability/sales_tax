@@ -21,6 +21,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
+    ruby-prof (0.15.9)
 
 PLATFORMS
   ruby
@@ -29,6 +30,7 @@ DEPENDENCIES
   bundler (~> 1.10)
   rake (~> 10.4.2)
   rspec (~> 3.4.0)
+  ruby-prof (~> 0.15.9)
   sales_tax!
 
 BUNDLED WITH

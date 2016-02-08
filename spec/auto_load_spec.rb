@@ -16,7 +16,10 @@ describe SalesTax do
   }
 
   it 'auto-loads CSV data' do
-    allow(CSV).to receive(:foreach).and_yield(mock_row)
+    mock_csv = mock_row.keys.join(',') + "\n" +
+               mock_row.values.join(',') + "\n"
+
+    allow(File).to receive(:read).and_return(mock_csv)
     allow(Dir).to receive(:glob).and_return(['a/b.csv'])
 
     require 'sales_tax/auto_load'
