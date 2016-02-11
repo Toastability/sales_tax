@@ -18,7 +18,10 @@ module SalesTax
     end
 
     def load_csv_file(path)
-      rows = CSV.parse(File.read(path)).to_a
+      rows = File.read(path)
+        .split("\n")
+        .map { |row| row.split ',' }
+
       rows.shift # Shift the header row off the front
 
       # 0 = State
