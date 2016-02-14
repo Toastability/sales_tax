@@ -1,8 +1,4 @@
-require 'csv'
-
 module SalesTax
-  Rate = Struct.new(:region_name, :region_code, :combined_rate, :state_rate, :county_rate, :city_rate, :special_rate)
-
   class RateStore
     def initialize
       # Map of 5-digit US zip code to `Rate` instances

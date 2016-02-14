@@ -1,3 +1,4 @@
+require 'sales_tax/rate'
 require 'sales_tax/rate_store'
 
 module SalesTax
