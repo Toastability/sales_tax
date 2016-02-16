@@ -20,15 +20,16 @@ module SalesTax
 
       rows.shift # Shift the header row off the front
 
-      # 0 = State
-      # 1 = ZipCode
-      # 2 = TaxRegionName
-      # 3 = TaxRegionCode
-      # 4 = CombinedRate
-      # 5 = StateRate
-      # 6 = CountyRate
-      # 7 = CityRate
-      # 8 = SpecialRate
+      # Layout of the rows in CSV:
+      #   0 = State
+      #   1 = ZipCode
+      #   2 = TaxRegionName
+      #   3 = TaxRegionCode
+      #   4 = CombinedRate
+      #   5 = StateRate
+      #   6 = CountyRate
+      #   7 = CityRate
+      #   8 = SpecialRate
 
       rows.to_a.each do |row|
         zip_code = row[1]
