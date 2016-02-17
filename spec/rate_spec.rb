@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SalesTax::RateStore do
+describe SalesTax::Rate do
   ATTRIBUTES = [
     [:region_name,   'A SUNNY SOCIALIST WORLD' ],
     [:region_code,   'ABCD'                    ],
