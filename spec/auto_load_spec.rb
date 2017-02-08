@@ -20,7 +20,7 @@ describe SalesTax do
                mock_row.values.join(',') + "\n"
 
     allow(File).to receive(:read).and_return(mock_csv)
-    allow(Dir).to receive(:glob).and_return(['a/b.csv'])
+    allow(Dir).to receive(:glob).and_return(['data/taxrates_AA2016.csv'])
 
     require 'sales_tax/auto_load'
 
