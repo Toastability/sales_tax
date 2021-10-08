@@ -4,27 +4,9 @@ Interface to the public [Avalara TaxRates](http://www.taxrates.com/) database fo
 
 **Notice**: This is a development tool only; it is not intended for use as tax compliance software and should not be relied upon for financial decisions. As detailed in the [LICENSE](LICENSE), **use of this software is at your own risk**. The author(s) disclaim all warranties and by your use of this software you agree to waive the author(s) of any and all liabilities. You should consult with a tax professional before collecting or paying taxes.
 
-[![Build Status](https://travis-ci.org/dirk/sales_tax.svg)](https://travis-ci.org/dirk/sales_tax)
-
 ## Installation
 
-Install via Rubygems or add the dependency via Bundler:
-
-```sh
-# Rubygems directly
-gem install sales_tax
-
-# In your Gemfile
-gem 'sales_tax'
-```
-
-After installation you will need to download the publicly available CSV data from Avalara's [taxrates.com](http://www.taxrates.com/download-tax-tables/):
-
-```sh
-# Ensure the gem is loaded when `rake` is called (this is done automatically
-# if you're using Rails and the gem is in your Gemfile)
-bundle exec rake sales_tax:download
-```
+After installation you will need to download the publicly available CSV data from Avalara's [taxrates.com](http://www.taxrates.com/download-tax-tables/) and place the csv files in the `tax_rates` directory located at the root of the application.
 
 ## Basic usage
 
