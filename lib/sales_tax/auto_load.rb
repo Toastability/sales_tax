@@ -1,6 +1,6 @@
 module SalesTax
   def self.auto_load
-    data_path  = File.join Dir.getwd, 'data'
+    data_path  = File.join Dir.getwd, 'tax_rates'
     data_files = Dir.glob(File.join data_path, '*.csv')
 
     if data_files.empty?
