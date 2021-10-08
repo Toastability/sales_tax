@@ -17,10 +17,8 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test}/*`.split "\n"
   s.require_paths = ['lib']
 
-  # s.add_dependency 'ffi', '~> 1.9.10'
-
-  s.add_development_dependency 'bundler', '~> 1.10'
-  s.add_development_dependency 'rake', '~> 10.4.2'
-  s.add_development_dependency 'rspec', '~> 3.4.0'
-  s.add_development_dependency 'ruby-prof', '~> 0.15.9'
+  s.add_development_dependency 'bundler', '~> 2.2.22'
+  s.add_development_dependency 'rake', '~> 13.0.6'
+  s.add_development_dependency 'rspec', '~> 3.10.0'
+  s.add_development_dependency 'ruby-prof', '~> 1.4.3'
 end

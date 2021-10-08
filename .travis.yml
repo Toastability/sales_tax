@@ -1,7 +1,7 @@
 sudo: false
 language: ruby
 cache: bundler
-rvm:
-  - '2.3.0'
+rbenv:
+  - '3.0.2'
 
 script: bundle exec rspec
