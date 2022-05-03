@@ -19,15 +19,10 @@ module SalesTax
         .map { |row| row.split ',' }
 
       rows.shift # Shift the header row off the front
-
-      if path.include? '2021'
-        load_2021_rows rows
-      else
-        raise ArgumentError, "Could not infer version from path: #{path}"
-      end
+      load_rows rows
     end
 
-    def load_2021_rows(rows)
+    def load_rows(rows)
       # Layout of the rows in the CSV:
       #   0 = State
       #   1 = ZipCode
